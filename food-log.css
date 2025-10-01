@@ -1,0 +1,124 @@
+.food-log-content {
+padding-top: 4rem;
+max-width: 800px;
+margin: 2rem auto;
+text-align: center;
+}
+.food-log-content h1 {
+font-size: 2.8rem;
+color: var(--primary-green, #163D30);
+margin-bottom: 1rem;
+}
+.food-log-content p {
+font-size: 1.1rem;
+color: var(--text-medium, #546e7a);
+margin-bottom: 2rem;
+}
+.food-input-section {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+justify-content: center;
+margin-bottom: 2rem;
+}
+.food-input-section input[type="text"],
+.food-input-section input[type="number"] {
+padding: 12px 15px;
+border: 1px solid var(--light-gray, #eceff1);
+border-radius: 8px;
+font-size: 1rem;
+flex: 1;
+min-width: 180px;
+color: var(--text-dark, #37474f);
+background-color: var(--white, white);
+}
+.food-input-section input[type="text"]::placeholder,
+.food-input-section input[type="number"]::placeholder {
+color: var(--medium-gray, #546e7a);
+opacity: 0.7;
+}
+.food-input-section input:focus {
+outline: none;
+border-color: var(--fresh-green, #66bb6a);
+box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.2);
+}
+.food-input-section .cta-button {
+flex-shrink: 0;
+padding: 12px 25px;
+font-size: 1rem;
+}
+.summary-section {
+background: var(--mint-green, #c8e6c9);
+padding: 1.5rem;
+border-radius: 10px;
+margin-bottom: 2rem;
+color: var(--text-dark, #37474f);
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.summary-section h3 {
+font-size: 1.8rem;
+margin: 0;
+}
+.summary-section #totalCalories {
+font-weight: 700;
+color: var(--primary-green, #163D30);
+}
+.food-list {
+list-style: none;
+padding: 0;
+}
+.food-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: var(--white, white);
+padding: 15px 20px;
+margin-bottom: 10px;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+transition: all 0.3s ease;
+border-left: 5px solid var(--fresh-green, #66bb6a);
+}
+body.dark-mode .food-item {
+background-color: #242424;
+border-left-color: var(--fresh-green, #66bb6a);
+}
+body.dark-mode .food-input-section input {
+background-color: #333;
+color: #f0f0f0;
+border-color: #555;
+}
+body.dark-mode .food-input-section input::placeholder {
+color: #aaa;
+}
+body.dark-mode .summary-section {
+background-color: #1a4f3b;
+color: #f0f0f0;
+}
+body.dark-mode .summary-section #totalCalories {
+color: var(--warm-yellow, #ffd54f);
+}
+.food-item.completed {
+text-decoration: line-through;
+opacity: 0.7;
+background: var(--light-gray, #eceff1);
+border-left-color: var(--medium-gray, #546e7a);
+}
+body.dark-mode .food-item.completed {
+background-color: #3a3a3a;
+border-left-color: #6a6a6a;
+}
+.food-item-details {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+.food-item-name {
+font-weight: 600;
+color: var(--text-dark, #37474f);
+font-size: 1.1rem;
+}
+body.dark-mode .food-item-name {
+color: #E0E0E0;
+
+}
