@@ -7,6 +7,9 @@ document.querySelector('.hamburger').addEventListener('click', function() {
     document.querySelector('.nav-links').classList.toggle('active');
 });
 
+
+/* modo oscuro*/
+
 const toggleCheckbox = document.getElementById('dark-mode-toggle');
 const body = document.body;
 
@@ -36,6 +39,7 @@ function applySavedTheme() {
 
     // Si hay un tema guardado y es 'dark'
     if (savedTheme === 'dark') {
+    
         // 3.1. Aplicar la clase al body
         body.classList.add('dark-mode');
         // 3.2. Asegurar que el checkbox (el toggle visual) esté marcado

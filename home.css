@@ -170,6 +170,7 @@ body.dark-mode .icono-modo-oscuro {
     width: 100%;
 }
 
+
 .hero {
     text-align: center;
     padding: 3rem 0;
@@ -179,6 +180,7 @@ body.dark-mode .icono-modo-oscuro {
     margin-bottom: 2rem;
     position: relative;
     overflow: hidden;
+    
 }
 
 .hero::before {
@@ -324,6 +326,11 @@ body.dark-mode .icono-modo-oscuro {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 3rem 0;
+   
+}
+.norayar{
+     text-decoration: none;
+    color: inherit;
 }
 
 .feature-card {
