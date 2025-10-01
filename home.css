@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color:white ;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+
+/*modo oscuro*/
+
+
+.hola {
+    /* Usar un margin-left fuerte para empujarlo a la derecha del menú.
+       Esto funciona porque .nav-links y .toggle-container están uno al lado del otro
+       en el flujo flexbox. */
+    margin-left: 20px; 
+    /* Asegura que el toggle esté centrado verticalmente con los enlaces */
+    display: flex;
+    align-items: center;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+
+body.dark-mode .navbar{
+    background-color:#163D30 ;
+}
+body.dark-mode .icono-modo-oscuro {
+    color: white; 
+}
+
+/* --- Estilos del Toggle Switch --- */
+
+/* 1. Ocultar el checkbox nativo */
+#dark-mode-toggle {
+    display: none;
+}
+#dark-mode-toggle:checked + .toggle-switch::after {
+    /* El valor de translateX debe ser calculado en base a tu diseño */
+    transform: translateX(30px); }
+
+/* 2. Diseñar el track (la barra) del switch */
+.toggle-switch {
+    display: block;
+    width: 60px; /* Ancho total del interruptor */
+    height: 30px; /* Alto total */
+    background-color: #ccc;
+    border-radius: 15px; /* Mitad de la altura para forma redondeada */
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 3. Diseñar el thumb (el círculo deslizante) */
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px; /* Diámetro del círculo */
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s; /* Para la animación del deslizamiento */
+}
+/*Nav bar*/
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+   background-color:white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scroll {
+    padding: 10px 5%;
+    background-color: whitesmoke;
+   
+}
+
+.logo a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+    transition: font-size 0.3s ease;
+    
+}
+
+.navbar.scroll .logo a {
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    
+}
+
+.nav-links a {
+    color: var(--white);
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--warm-yellow);
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+      background: #ff9800;
+}
+
+.navbar.scroll .nav-links a {
+    font-size: 16px;
+     
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-green), var(--light-green), var(--vibrant-orange));
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-medium);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 12px 30px;
+    background: var(--vibrant-orange);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+}
+
+.cta-button:hover {
+    background: var(--soft-orange);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 152, 0, 0.4);
+}
+
+.rating {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.stars {
+    color: var(--warm-yellow);
+    font-size: 1.2rem;
+}
+
+.rating-text {
+    color: var(--text-medium);
+    font-weight: 500;
+}
+
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.color-card {
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.color-card:hover {
+    transform: translateY(-5px);
+}
+
+.color-card h3 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.color-card p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.color-card{
+    background-color: #163D30;
+}
+
+.primary-green {
+    background: #163D30;
+}
+
+.light-green {
+    background: var(--light-green);
+}
+
+.fresh-green {
+    background: var(--fresh-green);
+}
+
+.mint-green {
+    background: var(--mint-green);
+    color: var(--text-dark);
+}
+
+.vibrant-orange {
+    background: var(--vibrant-orange);
+}
+
+.soft-orange {
+    background: var(--soft-orange);
+}
+
+.warm-yellow {
+    background: var(--warm-yellow);
+    color: var(--text-dark);
+}
+
+.dark-gray {
+    background: var(--dark-gray);
+}
+
+.medium-gray {
+    background: var(--medium-gray);
+}
+
+.light-gray {
+    background: var(--light-gray);
+    color: var(--text-dark);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 4px solid var(--fresh-green);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.feature-card p {
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.footer {
+    background: var(--dark-gray);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.footer-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--fresh-green);
+}
+
+.social-icons {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    color: var(--fresh-green);
+}
+
+.copyright {
+    margin-top: 1.5rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+      
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        transition: left 0.3s ease;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
